@@ -22,7 +22,7 @@ Check out the /example/www/index.html to see how it works.
    `-TwitterPlugin.js
 </pre>
 
-/native/ios is the native code for the plugin on ios.
+/native/ios is the native code for the plugin on iOS
 
 /www/TwitterPlugin.js is the JavaScript code for the plugin
 
@@ -40,4 +40,6 @@ iOS (Mac OS X)
 9. If you wish to allow users to share URLs and/or images you need to add a whitelist wildcard since you don't know which domains they'll reference. Simply add a wildcard entry (*) to external hosts whitelist (PhoneGap.plist/ExternalHosts).
 10. Run the application in Xcode.
 
-If you have issues with the app crashing on iOS Simulator you may have a weak linking issue. For more information see: http://stackoverflow.com/questions/6738858/use-of-blocks-crashes-app-in-iphone-simulator-4-3-xcode-4-2-and-4-0-2
+
+If you have issues with the app crashing with `EXC_BAD_ACCESS` on iOS Simulator you may have a weak linking issue. With your project highlighted in the left column in XCode go to Targets > Your Project > Build Settings > Linking > Other Linker Flags and replace `-weak_library` with `-weak-lSystem`
+For more information see: http://stackoverflow.com/questions/6738858/use-of-blocks-crashes-app-in-iphone-simulator-4-3-xcode-4-2-and-4-0-2
