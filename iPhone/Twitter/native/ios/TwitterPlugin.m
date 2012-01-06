@@ -94,7 +94,25 @@
 }
 
 - (void) composeTweet:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options{
+    // arguments: callback, tweet text, url attachment
+//    NSString *callbackId = [arguments objectAtIndex:0];
+    NSString *tweetText = [arguments objectAtIndex:1];
+    NSString *urlAttach = [arguments objectAtIndex:2];
+
     TWTweetComposeViewController *tweetComposeViewController = [[TWTweetComposeViewController alloc] init];
+    
+    [tweetComposeViewController setInitialText:tweetText];
+
+    BOOL ok = YES;
+    NSString *errorMessage;
+    
+    if(urlAttach != nil){
+        ok = [tweetComposeViewController addURL:[NSURL URLWithString:urlAttach]];
+        if(!ok){
+            errorMessage = @"URL too long";
+        }
+    }
+
     [tweetComposeViewController setCompletionHandler: ^(TWTweetComposeViewControllerResult result) {
         [[super appViewController] dismissModalViewControllerAnimated:YES];
     }];
