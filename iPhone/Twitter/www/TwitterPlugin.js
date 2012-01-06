@@ -15,8 +15,8 @@ Twitter.prototype.sendTweet = function(success, failure, tweetText, urlAttach, i
     PhoneGap.exec(success, failure, "com.phonegap.twitter", "sendTweet", [tweetText, urlAttach, imageAttach]);
 };
 
-Twitter.prototype.composeTweet = function(tweetText, urlAttach) {
-    PhoneGap.exec(null, null, "com.phonegap.twitter", "composeTweet", [tweetText, urlAttach]);
+Twitter.prototype.composeTweet = function() {
+    PhoneGap.exec(null, null, "com.phonegap.twitter", "composeTweet", []);
 };
 
 Twitter.prototype.getPublicTimeline = function(success, failure){
