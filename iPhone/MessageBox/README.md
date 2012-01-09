@@ -33,7 +33,7 @@ Using this plugin requires [iPhone PhoneGap](http://github.com/phonegap/phonegap
     messageBox.prompt('Title', 'Message', function(button, value) { console.warn('prompt', [this, arguments]); });
 
     // Prompt a password
-    messageBox.prompt('Please enter your password', '', function(button, value) { console.warn('prompt', [this, arguments]); }, {placeholder: 'password', type: 'password'});
+    messageBox.prompt('Please enter your password', '', function(button, value) { console.warn('prompt', [this, arguments]); }, {placeholder: 'password', type: 'password', text: 'default'});
 
 * Check [source](http://github.com/mgcrea/phonegap-plugins/tree/master/iPhone/MessageBox/MessageBox.js) for additional configuration.
 

@@ -28,6 +28,7 @@
 	NSMutableString *message = [NSMutableString stringWithString: ([options objectForKey:@"message"] ?: @"")];
 	NSString *type = [options objectForKey:@"type"] ?: @"text";
 	NSString *placeholder = [options objectForKey:@"placeholder"] ?: @"";
+	NSString *text = [options objectForKey:@"text"] ?: @"";
     NSString *okButtonTitle = [options objectForKey:@"okButtonTitle"] ?: @"OK";
     NSString *cancelButtonTitle = [options objectForKey:@"cancelButtonTitle"] ?: @"Cancel";
 	NSInteger textFieldPositionRow = (int)[options objectForKey:@"textFieldPositionRow"] ?: 1;
@@ -54,6 +55,10 @@
 		NSLog(@"Placeholder!");
 		[textField setPlaceholder:placeholder];
 	}
+	if ([text length] != 0) {
+		NSLog(@"Text!");
+		[textField setText:text];
+	}
 	if ([[type lowercaseString] isEqualToString:@"password"]) [textField setSecureTextEntry:YES];
 	[prompt addSubview:textField];
 	
@@ -65,7 +70,7 @@
 	
 	// Display prompt
 	[prompt show];
-    [prompt release];
+//    [prompt release];
 	
 	// Set cursor and show keyboard
 	[textField becomeFirstResponder];
