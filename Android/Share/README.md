@@ -16,11 +16,12 @@ By Kevin Schaul - @foxyNinja7
 * Call the plugin, specifying subject, text, success function, and failure function
 
 ```javascript
-window.plugins.share.show({
-	subject: 'I like turtles',
-	text: 'http://www.mndaily.com'},
-	function() {}, // Success function
-	function() {alert('Share failed')} // Failure function
+var share = new Share();
+share.show({
+    subject: 'I like turtles',
+    text: 'http://www.mndaily.com'},
+    function() {}, // Success function
+    function() {alert('Share failed')} // Failure function
 );
 ```
 
