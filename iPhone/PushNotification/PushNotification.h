@@ -24,30 +24,20 @@
  */
 
 #import <Foundation/Foundation.h>
-#ifdef PHONEGAP_FRAMEWORK
 #import <PhoneGap/PGPlugin.h>
-#else
-#import "PGPlugin.h"
-#endif
 
 @interface PushNotification : PGPlugin {
     
-    
-    NSString *registerSuccessCallback;
-    NSString *registerErrorCallback;
+    NSString* callbackID;
     NSDictionary *notificationMessage;
-    
     NSString *notificationCallbackId;
     
     BOOL ready;
 }
 
-@property (nonatomic, copy) NSString *callbackId;
+@property (nonatomic, copy) NSString *callbackID;
 @property (nonatomic, copy) NSString *notificationCallbackId;
-
 @property (nonatomic, retain) NSDictionary *notificationMessage;
-@property (nonatomic, retain) NSString *registerSuccessCallback;
-@property (nonatomic, retain) NSString *registerErrorCallback;
 
 - (void)registerAPN:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options;
 
