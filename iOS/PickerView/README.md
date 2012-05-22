@@ -12,7 +12,7 @@ by `Olivier Louvignes`
 Using this plugin requires [Cordova iOS](https://github.com/apache/incubator-cordova-ios).
 
 1. Make sure your Xcode project has been [updated for Cordova](https://github.com/apache/incubator-cordova-ios/blob/master/guides/Cordova%20Upgrade%20Guide.md)
-2. Drag and drop the `PickerView` folder from Finder to your Plugins folder in XCode, using "Create groups for any added folders"
+2. Drag and drop the `PickerView` folder's content (.h and .m files) from Finder to your Plugins folder in XCode, using "Create groups for any added folders"
 3. Add the .js files to your `www` folder on disk, and add reference(s) to the .js files as <link> tags in your html file(s)
 
     <script type="text/javascript" src="/js/plugins/PickerView.js"></script>
